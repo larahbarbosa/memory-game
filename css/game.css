@@ -25,6 +25,7 @@
     background-position: center;
     border: 2px solid #333;
     border-radius: 5px;
+    transition: all 500ms ease;
 }
 
 .front {
@@ -33,7 +34,7 @@
 }
 
 .back {
-    background-image: url('../img2/familia-adams02.png');
+    background-image: url('../img2/wandinha-capa.png');
     backface-visibility: hidden;
 }
 
@@ -41,3 +42,7 @@
     transform: rotateY(180deg);
 }
 
+.disable-card {
+    filter: saturate(0);
+    opacity: 0.5;
+}

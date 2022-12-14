@@ -22,7 +22,39 @@ const createElement = (tag, className) => {
 let firstCard = '';
 let secondCard = '';
 
+const checkEndGame = () => {
+    const disableCards = document.querySelectorAll('.disable-card');
+
+    if (disableCards.length === 20) {
+        alert('Parabéns! Você conseguiu!');
+    }
+}
+
 const checkCards = () => {
+    const firstCharacter = firstCard.getAttribute('data-character');
+    const secondCharacter = secondCard.getAttribute('data-character');
+
+    if (firstCharacter === secondCharacter) {
+
+        firstCard.firstChild.classList.add('disable-card');
+        secondCard.firstChild.classList.add('disable-card');
+
+        firstCard = '';
+        secondCard = '';
+
+        checkEndGame();
+
+    } else {
+
+        setTimeout(() => {
+            firstCard.classList.remove('reveal-card');
+            secondCard.classList.remove('reveal-card');
+
+            firstCard = '';
+            secondCard = '';
+        }, 500);
+
+    }
 
 }
 
@@ -59,6 +91,7 @@ const createCard = (characters) => {
     card.appendChild(back);
 
     card.addEventListener('click', revealCard);
+    card.setAttribute('data-character', characters);
 
     return card;
 }
