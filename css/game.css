@@ -1,9 +1,33 @@
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image: url('../img2/background-edit.png');
+    background-size: cover;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 50px;
+    color: aliceblue;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    margin: 0 0 30px;
+    font-size: 1.2em;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 15px;
     width: 100%;
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
